@@ -23,6 +23,9 @@ pipeline {
             }
         }
         stage('flask run') {
+            options {
+                timeout(time: 1, unit: 'MINUTES')
+            }
             steps {
                 echo 'flask ready.'
                 sh 'python src/main.py'
