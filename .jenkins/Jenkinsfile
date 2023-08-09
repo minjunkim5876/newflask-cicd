@@ -68,7 +68,7 @@ pipeline {
                                 }'
                     """, returnStdout: true) // 스크립트 실행 후 출력 결과를 response 변수에 저장!
 
-                    sh "echo $response"
+                    sh "echo '$response'"
                 }
             }
         }
