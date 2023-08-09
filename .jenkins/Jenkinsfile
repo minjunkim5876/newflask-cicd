@@ -1,0 +1,39 @@
+pipeline {
+    agent {
+        // 젠킨스의 파이프라인 실행 환경을 docker 컨테이너로 사용
+        docker {
+            image 'python:3.10' // 도커 이미지
+            args '-u root' // 컨테이너 실행에 필요한 옵션 설정
+            reuseNode true // 젠킨스의 작업영역과 컨테이너를 연결하여 사용
+        }
+    }
+    triggers {
+        githubPush()
+    }
+    options {
+        timestamps()
+    }
+    stages {
+        stage('pip install') {
+            steps {
+                echo 'requirements.txt reading...'
+                sh 'pip install -r requirements.txt'
+                echo 'pip install done.'
+                echo 'flask install success!!'
+            }
+        }
+        stage('flask run') {
+            steps {
+                echo 'flask ready.'
+                sh 'python src/main.py'
+                echo 'flask running.'
+            }
+        }
+        stage('endpoint test') {
+            steps {
+                echo 'http://localhost:5000/ connect...'
+                sh 'curl -s localhost:5000'
+            }
+        }
+    }
+}
