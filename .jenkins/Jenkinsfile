@@ -58,9 +58,9 @@ pipeline {
                             -H "X-GitHub-Api-Version: 2022-11-28" \
                             https://api.github.com/repos/AnByoungHyun/flask-cicd/releases \
                             -d '{
-                                    "tag_name":"v1.0.0",
+                                    "tag_name":"v1.1.0",
                                     "target_commitish":"main",
-                                    "name":"v1.0.0",
+                                    "name":"v1.1.0",
                                     "body":"Description of the release",
                                     "draft":false,
                                     "prerelease":false,
