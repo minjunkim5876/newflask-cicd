@@ -70,7 +70,7 @@ pipeline {
 
                     sh "echo '$response'"
 
-                    def json = readJSON text: response
+                    def json = readJSON text: "$response"
 
                     sh "echo '${json.id}'"
                 }
