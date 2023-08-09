@@ -41,5 +41,11 @@ pipeline {
                 sh 'curl -s localhost:5000'
             }
         }
+        stage('github create release') {
+            steps {
+                def hello = 'Hello'
+                sh "echo $hello"
+            }
+        }
     }
 }
