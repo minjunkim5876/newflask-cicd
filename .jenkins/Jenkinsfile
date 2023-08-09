@@ -43,8 +43,10 @@ pipeline {
         }
         stage('github create release') {
             steps {
-                def hello = 'Hello'
-                sh "echo $hello"
+                script {
+                    def hello = 'Hello'
+                    sh "echo $hello"
+                }
             }
         }
     }
