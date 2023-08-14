@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        // 젠킨스의 파이프라인 실행 환경을 docker 컨테이너로 사용할까여?합니다.
+        // 젠킨스의 파이프라인 실행 환경을 docker 컨테이너로 사용할까여
         docker {
             image 'python:3.10' // 도커 이미지
             args '-u root' // 컨테이너 실행에 필요한 옵션 설정
