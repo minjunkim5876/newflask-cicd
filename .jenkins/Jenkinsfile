@@ -15,7 +15,7 @@ pipeline {
         // GITHUB_CREDENTIAL_PSW: 자격증명 생성할 때 입력한 password 가 저장된 환경변수
         GITHUB_CREDENTIAL = credentials('github-token')
         USR = 'minjunkim5876'
-        REPO = 'flask-cicd'
+        REPO = 'newflask-cicd'
     }
     triggers {
         githubPush()
